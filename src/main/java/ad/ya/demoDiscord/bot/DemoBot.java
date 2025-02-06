@@ -20,13 +20,10 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 
 @SpringBootApplication
 public class DemoBot extends ListenerAdapter {
-    // Exécute du code quand le bot est "activé" sur un serveur
     private List<Account> listAccount = new ArrayList<>();
-    // Map des commandes
     private final Map<String, Consumer<SlashCommandInteractionEvent>> commandMap = new HashMap<>();
 
     public DemoBot() {
-        // On associe chaque commande à une méthode sans utiliser de Consumer
         commandMap.put("hello", this::handleHello);
         commandMap.put("tell", this::handleTell);
         commandMap.put("solde", this::handleSolde);
